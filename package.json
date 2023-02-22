@@ -31,6 +31,7 @@
     "dependencies": {
         "bless": "3.0.3",
         "node-sass": "^7.0.1",
+        "qs": "^6.11.0",
         "replace": "latest",
         "semver-regex": "^3.1.4",
         "shell-quote": "^1.7.3",
