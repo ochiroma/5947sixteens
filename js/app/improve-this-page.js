@@ -1,8 +1,14 @@
 $(document).ready(function () {
     var pageURL = window.location.href;
     var feedbackOrigin = window.feedbackOrigin;
-    var feedbackURL =  document.querySelector("#feedback-api-enabled") ?  document.querySelector("#feedback-api-url").value : "/feedback";
-    var useFeedbackAPI = document.querySelector("#feedback-api-enabled").value;
+    var useFeedbackAPI = document.querySelector("#feedback-api-enabled");
+    if (document.querySelector("#feedback-api-enabled") && 
+        document.querySelector("#feedback-api-enabled").value === "true" && 
+        document.querySelector("#feedback-api-url")) {
+        var feedbackURL = document.querySelector("#feedback-api-url").value;
+    } else {
+        var feedbackURL ="/feedback";
+    }
 
     if (feedbackOrigin && feedbackOrigin.length > 0) {
         feedbackURL = feedbackOrigin + feedbackURL;
@@ -39,7 +45,7 @@ $(document).ready(function () {
         postObject.ons_url  = window.location.href;
         var postJson = JSON.stringify(postObject);
 
-        if (useFeedbackAPI) { 
+        if (useFeedbackAPI && useFeedbackAPI.value === "true") { 
             $.ajax({
                 type: "POST",
                 url: feedbackURL,
@@ -136,7 +142,7 @@ $(document).ready(function () {
         postObject.email_address = email;
         var postJson = JSON.stringify(postObject);
 
-        if (useFeedbackAPI) { 
+        if (useFeedbackAPI && useFeedbackAPI.value === "true") { 
             $.ajax({
                 type: "POST",
                 url: feedbackURL,
