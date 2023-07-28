@@ -400,7 +400,8 @@
 
 // Set anything with aria-hidden attributes to correct display state
  @media only screen {
-     [aria-hidden*=true] {
+    // hotjar css classes to be excluded
+     [aria-hidden*=true]:not([class^="_hj"] > *) {
          display: none;
          visibility: hidden;
      }
