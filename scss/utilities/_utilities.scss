@@ -400,15 +400,10 @@
 
 // Set anything with aria-hidden attributes to correct display state
  @media only screen {
-    // hotjar and highcharts css classes to be excluded
-     [aria-hidden*=true]:not([class^="_hj"] > *):not([class^="highcharts"]) {
+    // hotjar and svgs to be excluded
+     [aria-hidden*=true]:not([class^="_hj"] > *):not(svg[aria-hidden*=true]) {
          display: none;
          visibility: hidden;
-     }
-
-     svg[aria-hidden*=true] { // Allow SVGs to still show even with aria:hidden. Only want them hidden from screen readers.
-         display: block;
-         visibility: visible;
      }
 
      [aria-hidden*=false] {
