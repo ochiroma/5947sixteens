@@ -4,10 +4,32 @@ This app is now deprecated, the app will be only updated for critical updates or
 
 ## How to install and run
 
-1. Clone this repo onto your machine.
-2. Install [Node][node] and [NPM][npm].
-3. Run `npm install` from the root of the repo you've cloned onto your machine.
-4. Use the JS and CSS files in the `dist` directory.
+### Using nvm
+
+If you work across multiple Node.js projects there's a good chance they require different Node.js and npm versions.
+
+To enable this we use [nvm (Node Version Manager)](https://github.com/creationix/nvm) to switch between versions easily.
+
+- Install nvm
+
+```bash
+brew install nvm
+```
+
+- Run nvm install in the project directory (this will use .nvmrc)
+
+```bash
+nvm install
+```
+
+### Manually install Node and NPM
+
+- Install [Node][node] (version denoted in `.nvmrc`) and [NPM][npm].
+
+### Run the app
+
+1. Run `npm install && npm run dev` from the root of the repo you've cloned onto your machine.
+1. Use the JS and CSS files in the `dist` directory.
 
 ## jQuery
 
