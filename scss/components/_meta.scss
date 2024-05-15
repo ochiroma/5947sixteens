@@ -57,6 +57,11 @@
 		height: 47px;
 		float: left;
 		margin-right: 16px;
+
+		&--logo {
+			height:58px;
+			margin-top:-3px;
+		}
 	}
 
 	&__list {
