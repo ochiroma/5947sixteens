@@ -117,7 +117,7 @@ $(document).ready(function () {
                 emailError = "<span class=\"form-error\" role=\"alert\">This is not a valid email address, correct it or delete it</span>";
             }
 
-            var emailReg = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$/g;
+            var emailReg = /^[A-Za-z0-9.`!#$%&'*+-/=?^_{|}~]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$/g;
 
             if (!emailReg.test(email)) {
                 if (!$(" #email-field-label .form-error").length) {
